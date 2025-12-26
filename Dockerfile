@@ -1,5 +1,4 @@
 ﻿FROM lscr.io/linuxserver/code-server:latest
-
 LABEL authors="AUTHOR_NAME"
 
 # Environment variables for Debian frontend (noninteractive install)
