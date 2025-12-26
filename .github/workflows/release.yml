@@ -78,7 +78,6 @@ jobs:
           push: true
           tags: 'ghcr.io/vamidi/code-server:${{ needs.dry-run.outputs.new_tag_version }}'
   release:
-    # needs: [deploy-payload, deploy-bullmq, deploy-scraper]
     needs: [deploy-vs-code-server]
     if: |
       always() &&
