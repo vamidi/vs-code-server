@@ -1,0 +1,19 @@
+﻿services:
+  code-server:
+    image: <reponame>/vscode-server-custom:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PWA_APPNAME=code-server
+      - HASHED_PASSWORD=
+      - DEFAULT_WORKSPACE=
+    volumes:
+      - ./config:/config
+    ports:
+      - 9443:8443
+    restart: unless-stopped
